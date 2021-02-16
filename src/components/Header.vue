@@ -1,7 +1,11 @@
 <template>
   <header>
-    <h1>{{ mode }} Mode</h1>
+    <h1>{{ mode }}</h1>
     <Toggle :mode="mode" @toggle="$emit('toggle')" />
+    <nav>
+      <div class="nav-link"><router-link to="/">Current</router-link></div>
+      <div class="nav-link"><router-link to="/forecasts">Forecasts</router-link></div>
+    </nav>
   </header>
 </template>
 
@@ -31,9 +35,9 @@ header {
 }
 
 header h1 {
-  font-size: 24px;
+  font-size: 20px;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 800;
 }
 header nav {
   display: flex;
@@ -45,9 +49,12 @@ header nav .nav-link {
   padding: 0px 15px;
 }
 header nav .nav-link:hover {
-  background: #02bff8;
+  background: #9eff01b7;
 }
 .dark header nav .nav-link:hover {
-  background: #101520;
+  background: #ffd000;
 }
+.router-link-exact-active {
+      color: #011aff; 
+    }
 </style>

@@ -1,12 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-  const routes = []
+  const routes = [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/forecasts',
+      name: 'Forecasts',
+      component: () => import('../views/Forecasts.vue')
+    }
+  ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'history', 
   base: process.env.BASE_URL,
   routes
 })
