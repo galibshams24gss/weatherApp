@@ -1,4 +1,4 @@
-# events-app
+# weather-app
 
 ## Project setup
 ```
